@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.template.HelloController"
+            prefWidth="1000.0"
+            prefHeight="700.0"
+            style="-fx-background-color: #172033;">
+
+   <!-- TOP -->
+   <top>
+      <VBox alignment="CENTER" spacing="8">
+
+         <padding>
+            <Insets top="20" bottom="15"/>
+         </padding>
+
+         <Label text="FARKLE"
+                style="-fx-font-size: 38px;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: white;"/>
+
+         <Label text="Roll • Select • Bank • Don't Farkle!"
+                style="-fx-font-size: 16px;
+                          -fx-text-fill: #cbd5e1;"/>
+
+      </VBox>
+   </top>
+
+
+   <!-- CENTER -->
+   <center>
+      <VBox alignment="CENTER" spacing="25">
+
+         <!-- PLAYER -->
+         <VBox alignment="CENTER" spacing="10"
+               style="-fx-background-color: #263449;
+                         -fx-background-radius: 15;
+                         -fx-padding: 15;">
+
+            <Label fx:id="playerlbl"
+                    text="Player"
+                   style="-fx-font-size: 20px;
+                              -fx-font-weight: bold;
+                              -fx-text-fill: white;"/>
+
+            <HBox alignment="CENTER" spacing="10">
+
+               <TextField fx:id="nameTextField"
+                          promptText="Enter player name..."
+                          prefWidth="250"
+                          prefHeight="40"
+                          style="-fx-font-size: 16px;"/>
+
+               <Button fx:id="addPlayerButton"
+                       text="Add Player"
+                       onAction="#addPlayer"
+                       prefWidth="150"
+                       prefHeight="40"
+                       style="-fx-font-size: 16px;
+                                   -fx-font-weight: bold;"/>
+
+            </HBox>
+
+         </VBox>
+
+
+         <!-- GAME -->
+         <HBox alignment="CENTER" spacing="40">
+
+
+            <!-- DICE SECTION -->
+            <VBox alignment="CENTER" spacing="15">
+
+               <Label text="Dice"
+                      style="-fx-font-size: 26px;
+                                  -fx-font-weight: bold;
+                                  -fx-text-fill: white;"/>
+
+               <Label text="Select dice to bank"
+                      style="-fx-font-size: 14px;
+                                  -fx-text-fill: #94a3b8;"/>
+
+
+               <!-- ROW 1 -->
+               <HBox alignment="CENTER" spacing="12">
+
+                  <!-- DIE 1 -->
+                  <VBox alignment="CENTER" spacing="8"
+                        style="-fx-background-color: #263449;
+                                     -fx-background-radius: 15;
+                                     -fx-padding: 12;">
+
+                     <Label fx:id="die1Label"
+                            text="1"
+                            prefWidth="80"
+                            prefHeight="55"
+                            alignment="CENTER"
+                            style="-fx-font-size: 28px;
+                                          -fx-font-weight: bold;
+                                          -fx-text-fill: white;"/>
+
+                     <ToggleButton fx:id="die1Toggle"
+                                   text="Bank"
+                                   prefWidth="75"
+                                   prefHeight="30"
+                                   onAction="#selectDie"/>
+                  </VBox>
+
+
+                  <!-- DIE 2 -->
+                  <VBox alignment="CENTER" spacing="8"
+                        style="-fx-background-color: #263449;
+                                     -fx-background-radius: 15;
+                                     -fx-padding: 12;">
+
+                     <Label fx:id="die2Label"
+                            text="2"
+                            prefWidth="80"
+                            prefHeight="55"
+                            alignment="CENTER"
+                            style="-fx-font-size: 28px;
+                                          -fx-font-weight: bold;
+                                          -fx-text-fill: white;"/>
+
+                     <ToggleButton fx:id="die2Toggle"
+                                   text="Bank"
+                                   prefWidth="75"
+                                   prefHeight="30"
+                                   onAction="#selectDie"/>
+
+                  </VBox>
+
+
+                  <!-- DIE 3 -->
+                  <VBox alignment="CENTER" spacing="8"
+                        style="-fx-background-color: #263449;
+                                     -fx-background-radius: 15;
+                                     -fx-padding: 12;">
+
+                     <Label fx:id="die3Label"
+                            text="3"
+                            prefWidth="80"
+                            prefHeight="55"
+                            alignment="CENTER"
+                            style="-fx-font-size: 28px;
+                                          -fx-font-weight: bold;
+                                          -fx-text-fill: white;"/>
+
+                     <ToggleButton fx:id="die3Toggle"
+                                   text="Bank"
+                                   prefWidth="75"
+                                   prefHeight="30"
+                                   onAction="#selectDie"/>
+
+                  </VBox>
+
+               </HBox>
+
+
+               <!-- ROW 2 -->
+               <HBox alignment="CENTER" spacing="12">
+
+                  <!-- DIE 4 -->
+                  <VBox alignment="CENTER" spacing="8"
+                        style="-fx-background-color: #263449;
+                                     -fx-background-radius: 15;
+                                     -fx-padding: 12;">
+
+                     <Label fx:id="die4Label"
+                            text="4"
+                            prefWidth="80"
+                            prefHeight="55"
+                            alignment="CENTER"
+                            style="-fx-font-size: 28px;
+                                          -fx-font-weight: bold;
+                                          -fx-text-fill: white;"/>
+
+                     <ToggleButton fx:id="die4Toggle"
+                                   text="Bank"
+                                   prefWidth="75"
+                                   prefHeight="30"
+                                   onAction="#selectDie"/>
+
+                  </VBox>
+
+
+                  <!-- DIE 5 -->
+                  <VBox alignment="CENTER" spacing="8"
+                        style="-fx-background-color: #263449;
+                                     -fx-background-radius: 15;
+                                     -fx-padding: 12;">
+
+                     <Label fx:id="die5Label"
+                            text="5"
+                            prefWidth="80"
+                            prefHeight="55"
+                            alignment="CENTER"
+                            style="-fx-font-size: 28px;
+                                          -fx-font-weight: bold;
+                                          -fx-text-fill: white;"/>
+
+                     <ToggleButton fx:id="die5Toggle"
+                                   text="Bank"
+                                   prefWidth="75"
+                                   prefHeight="30"
+                                   onAction="#selectDie"/>
+
+                  </VBox>
+
+
+                  <!-- DIE 6 -->
+                  <VBox alignment="CENTER" spacing="8"
+                        style="-fx-background-color: #263449;
+                                     -fx-background-radius: 15;
+                                     -fx-padding: 12;">
+
+                     <Label fx:id="die6Label"
+                            text="6"
+                            prefWidth="80"
+                            prefHeight="55"
+                            alignment="CENTER"
+                            style="-fx-font-size: 28px;
+                                          -fx-font-weight: bold;
+                                          -fx-text-fill: white;"/>
+
+                     <ToggleButton fx:id="die6Toggle"
+                                   text="Bank"
+                                   prefWidth="75"
+                                   prefHeight="30"
+                                   onAction="#selectDie"/>
+
+                  </VBox>
+
+               </HBox>
+
+
+               <!-- ROLL BUTTON -->
+               <Button fx:id="rollDiceButton"
+                       text="ROLL DICE"
+                       onAction="#rollDice"
+                       prefWidth="240"
+                       prefHeight="55"
+                       style="-fx-font-size: 19px;
+                                   -fx-font-weight: bold;"/>
+
+            </VBox>
+
+
+            <!-- SCORE SECTION -->
+            <VBox alignment="CENTER" spacing="12"
+                  style="-fx-background-color: #263449;
+                             -fx-background-radius: 20;
+                             -fx-padding: 25;">
+
+               <Label text="TOTAL SCORE"
+                      style="-fx-font-size: 20px;
+                                  -fx-font-weight: bold;
+                                  -fx-text-fill: white;"/>
+
+               <Label fx:id="scoreLabel"
+                      text="0"
+                      style="-fx-font-size: 38px;
+                                  -fx-font-weight: bold;
+                                  -fx-text-fill: #facc15;"/>
+
+
+               <Label text="TURN SCORE"
+                      style="-fx-font-size: 20px;
+                                  -fx-font-weight: bold;
+                                  -fx-text-fill: white;"/>
+
+               <Label fx:id="turnScoreLabel"
+                      text="0"
+                      style="-fx-font-size: 34px;
+                                  -fx-font-weight: bold;
+                                  -fx-text-fill: #4ade80;"/>
+
+
+               <Label text="BANKED DICE"
+                      style="-fx-font-size: 18px;
+                                  -fx-font-weight: bold;
+                                  -fx-text-fill: white;"/>
+
+               <ListView fx:id="bankedDiceListView"
+                         prefWidth="210"
+                         prefHeight="130"
+                         style="-fx-font-size: 17px;"/>
+
+
+               <Button fx:id="bankPointsButton"
+                       text="BANK POINTS"
+                       onAction="#bankPoints"
+                       prefWidth="200"
+                       prefHeight="50"
+                       style="-fx-font-size: 18px;
+                                   -fx-font-weight: bold;"/>
+
+            </VBox>
+
+         </HBox>
+
+      </VBox>
+   </center>
+
+
+   <!-- BOTTOM -->
+   <bottom>
+      <HBox alignment="CENTER">
+
+         <padding>
+            <Insets top="15" bottom="20"/>
+         </padding>
+
+         <Label text="🔥 Don't Farkle! Keep rolling and build your score!"
+                style="-fx-font-size: 16px;
+                          -fx-text-fill: #cbd5e1;"/>
+
+      </HBox>
+   </bottom>
+
+</BorderPane>
